@@ -35,6 +35,14 @@ void Led::setColor(const int r, const int g, const int b) {
 }
 
 
+/**
+ * @brief This simulates a heart beat (LUB AND DUB)
+ * @param bpm - Beats per minute
+ * @param lub - Function to be called when LUB is happening
+ * @param afterLub - Function to be called after LUB is done
+ * @param dub - Function to be called when DUB is happening
+ * @param afterDub - Function to be called after DUB is done
+*/
 void cardiacCycle(const int bpm, void (*lub)(), void (*afterLub)(), void (*dub)(), void (*afterDub)()) {
     // Calculate duration of RR interval in milliseconds
     float rr_interval_duration = 60000.0 / bpm;
@@ -80,4 +88,13 @@ void cardiacCycle(const int bpm, void (*lub)(), void (*afterLub)(), void (*dub)(
             }
             break;
     }
+}
+
+Motor::Motor(int pin) {
+    pinMode(pin, OUTPUT);
+    pin_ = pin;
+}
+
+void Motor::setSpeed(int speed) {
+    analogWrite(pin_, speed);
 }

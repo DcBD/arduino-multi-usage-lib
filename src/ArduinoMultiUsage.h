@@ -23,6 +23,15 @@ private:
     int bluePin_;
 };
 
+class Motor {
+public:
+    Motor(int pin);
+    void setSpeed(int speed);
+
+private:
+    int pin_;
+};
+
 void cardiacCycle(const int bpm, void (*lub)(), void afterLub(), void (*dub)(), void afterDub());
 
 
