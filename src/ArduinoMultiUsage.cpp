@@ -96,5 +96,5 @@ Motor::Motor(int pin) {
 }
 
 void Motor::setSpeed(int speed) {
-    digitalWrite(pin_, speed);
+    analogWrite(pin_, speed);
 }
