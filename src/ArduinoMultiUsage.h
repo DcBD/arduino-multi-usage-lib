@@ -1,5 +1,5 @@
-#ifndef RGBLed_H_
-#define RGBLed_H_
+#ifndef ArduinoMultiUsage_H_
+#define ArduinoMultiUsage_H_
 #include <Arduino.h>
 
 struct RGBColor
@@ -17,12 +17,13 @@ public:
     void setR(const int r);
     void setG(const int g); 
     void setB(const int b);
-    void heartBeat(const int bpm, const RGBColor color);
 private:
     int redPin_;
     int greenPin_;
     int bluePin_;
 };
+
+void cardiacCycle(const int bpm, void (*lub)(), void afterLub(), void (*dub)(), void afterDub());
 
 
 
